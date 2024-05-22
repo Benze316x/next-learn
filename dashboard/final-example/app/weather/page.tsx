@@ -6,8 +6,9 @@ import Date from '../components/date';
 import { Country, State, City, ICountry, ICity } from 'country-state-city';
 
 import { useEffect, useState } from 'react';
+import AcmeLogo from '../ui/acme-logo';
 // import moment from 'moment';
-export default function Home({ }) {
+export default function Page({ }) {
   type WeatherData = {
     name: string,
     main: any
@@ -64,45 +65,43 @@ export default function Home({ }) {
     }
   }
   return (
+    < >
 
-    <>
 
-
-      <h2 className="text-6xl font-bold underline">
-      Hello world!
-    </h2>
-
-      <select style={{ width: 120 }} onChange={(e) => handleCityChanged(e.currentTarget.value)}>
-            {cities && cities.map((city, index) => (
-              <option value={city.name} key={index} >
-                {city.name}
-              </option>
-            ))}
-          </select>
-
+<main className="flex items-center justify-center md:h-screen">
+      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
+        <div className="flex h-20 w-full items-end rounded-lg bg-blue-500 p-3 md:h-36">
+          <div className="w-32 text-white md:w-36">
+            <AcmeLogo />
+          </div>
+        </div>
         <section>
-          <p>My Name is Waleed Jamal</p>
-          <span>Enter City</span>
+        <span>Enter City</span>
+
+        <div className='flex space-x-4'>
           <input type="text" placeholder='enter City' value={searchValue} onChange={(e) => handleSearchChanged(e.target.value)}></input>
-          <select style={{ width: 120 }} onChange={(e) => handleCityChanged(e.currentTarget.value)}>
+
+          <select onChange={(e) => handleCityChanged(e.currentTarget.value)}>
             {cities && cities.map((city, index) => (
               <option key={index} value={city.name}>
                 {city.name}
               </option>
             ))}
           </select>
+          </div>
+      
           {data && data.main.temp &&(
-            <p>the weather in {data.name} is {data.main.temp}  and it feels like {data.main.feels_like} {' '}
-            <a href="https://nextjs.org/learn">our Next.js tutorial</a>
+            <p>The weather in {data.name} is {data.main.temp}°C and it feels like {data.main.feels_like}°C
           </p>
           )}
           
         </section>
-      <section >
-        <h2>Blog</h2>
+      </div>
+    </main>
 
-      </section>
-      </>
+
+
+    </>
   );
 }
 

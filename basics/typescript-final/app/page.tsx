@@ -67,29 +67,22 @@ export default function Page({ }) {
     < >
 
 
-      <h2 className="text-3xl font-bold underline">
-      Hello world!
-    </h2>
-
-      <select style={{ width: 120 }} onChange={(e) => handleCityChanged(e.currentTarget.value)}>
-            {cities && cities.map((city, index) => (
-              <option value={city.name} key={index} >
-                {city.name}
-              </option>
-            ))}
-          </select>
-
         <section>
-          <p>My Name is Waleed Jamal</p>
-          <span>Enter City</span>
+        <p>My Name is Waleed Jamal</p>
+        <span>Enter City</span>
+
+        <div className='flex space-x-4'>
           <input type="text" placeholder='enter City' value={searchValue} onChange={(e) => handleSearchChanged(e.target.value)}></input>
-          <select style={{ width: 120 }} onChange={(e) => handleCityChanged(e.currentTarget.value)}>
+
+          <select onChange={(e) => handleCityChanged(e.currentTarget.value)}>
             {cities && cities.map((city, index) => (
               <option key={index} value={city.name}>
                 {city.name}
               </option>
             ))}
           </select>
+          </div>
+      
           {data && data.main.temp &&(
             <p>the weather in {data.name} is {data.main.temp}  and it feels like {data.main.feels_like} {' '}
             <a href="https://nextjs.org/learn">our Next.js tutorial</a>
