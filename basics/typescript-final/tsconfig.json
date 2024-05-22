@@ -21,8 +21,12 @@
     "plugins": [
       {
         "name": "next"
-      }
-    ]
+      },
+      
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "exclude": [
     "node_modules"
@@ -31,6 +35,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-  ]
+    ".next/types/**/*.ts", "tailwind.config.ts"  ]
 }

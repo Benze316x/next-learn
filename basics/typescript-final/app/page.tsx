@@ -1,6 +1,5 @@
 "use client"
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
@@ -8,7 +7,7 @@ import { Country, State, City, ICountry, ICity } from 'country-state-city';
 
 import { useEffect, useState } from 'react';
 // import moment from 'moment';
-export default function Home({ }) {
+export default function Page({ }) {
   type WeatherData = {
     name: string,
     main: any
@@ -65,17 +64,10 @@ export default function Home({ }) {
     }
   }
   return (
-    <Layout home>
-      <Head>
+    < >
 
 
-
-        <title>{siteTitle}</title>
-        <link href="./output.css" rel="stylesheet"></link>
-      </Head>
-
-
-      <h2 className="text-6xl font-bold underline">
+      <h2 className="text-3xl font-bold underline">
       Hello world!
     </h2>
 
@@ -109,7 +101,7 @@ export default function Home({ }) {
         <h2>Blog</h2>
 
       </section>
-    </Layout>
+    </>
   );
 }
 
