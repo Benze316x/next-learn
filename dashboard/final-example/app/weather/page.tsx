@@ -1,6 +1,5 @@
 "use client"
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
@@ -65,14 +64,8 @@ export default function Home({ }) {
     }
   }
   return (
-    <Layout home>
-      <Head>
 
-
-
-        <title>{siteTitle}</title>
-        <link href="./output.css" rel="stylesheet"></link>
-      </Head>
+    <>
 
 
       <h2 className="text-6xl font-bold underline">
@@ -109,7 +102,7 @@ export default function Home({ }) {
         <h2>Blog</h2>
 
       </section>
-    </Layout>
+      </>
   );
 }
 
