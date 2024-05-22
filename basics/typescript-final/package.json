@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "country-state-city": "^3.2.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
     "moment": "^2.30.1",
